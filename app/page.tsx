@@ -1,37 +1,16 @@
-type CalcRes = {
-  a: number;
-  b: number;
-  operator: string;
-  result: string | number;
-};
+import Link from "next/link";
 
-type PageProps = {
-  searchParams: {
-    a: number;
-    b: number;
-    operator: string | undefined;
-  };
-};
-
-export default async function Home({ searchParams }: PageProps) {
-  const { a, b, operator = "+" } = await searchParams;
-  console.log(a, b, operator);
-
-  const result = await fetch(
-    `http://localhost:8000/calculate/${a}/${b}?operator=${encodeURIComponent(operator || "+")}`,
-  );
-
-  const message: CalcRes = await result.json();
-
+export default async function Home() {
   return (
-    <div>
-      <p className="text-lg font-bold">Hello</p>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-lg font-bold mb-2">Hello</h1>
       <hr />
-      <br />
-      <p>a: {message.a}</p>
-      <p>b: {message.b}</p>
-      <p>operator: {message.operator}</p>
-      <p>result: {message.result}</p>
+      <p>This is an example page for the API projects for frontend use.</p>
+      <p>Check out the following pages:</p>
+      <ul className="list-disc pl-8">
+        <li><Link href={`/mi-1`}><a className="text-blue-500">mi-1</a></Link></li>
+        <li><Link href={`/mi-2`}><a className="text-blue-500">mi-2</a></Link></li>
+      </ul>
     </div>
   );
 }
