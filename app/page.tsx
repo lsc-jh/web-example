@@ -8,8 +8,8 @@ export default async function Home() {
       <p>This is an example page for the API projects for frontend use.</p>
       <p>Check out the following pages:</p>
       <ul className="list-disc pl-8">
-        <li><Link href={`/mi-1`}><a className="text-blue-500">mi-1</a></Link></li>
-        <li><Link href={`/mi-2`}><a className="text-blue-500">mi-2</a></Link></li>
+        <li><Link href={`/mi-1`} className={"text-blue-500"}>mi-1</Link></li>
+        <li><Link href={`/mi-2`} className={"text-blue-500"}>mi-2</Link></li>
       </ul>
     </div>
   );
