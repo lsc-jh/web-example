@@ -1,6 +1,7 @@
 import {CalcRes, PageProps} from "@/common-lib/types";
 
-export default async function Home({ searchParams }: PageProps) {
+export default async function Home(props: PageProps) {
+  const searchParams = await props.searchParams;
   const { a, b, operator = "+" } = searchParams;
   console.log(a, b, operator);
 
